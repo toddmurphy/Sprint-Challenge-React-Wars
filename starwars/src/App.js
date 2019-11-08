@@ -7,6 +7,14 @@ const AppContainer = styled.div`
   border: 2px solid red;
 `;
 
+const AppTitle = styled.div`
+  font-size: 3rem;
+  text-align: center;
+`;
+
+// const MovieImage = styled.img`
+
+// `
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -17,6 +25,11 @@ const App = () => {
 
   return (
     <AppContainer>
+      <AppTitle>React Wars: Ready for Battle </AppTitle>
+      <div>
+        <img src="https://images.unsplash.com/photo-1547700055-b61cacebece9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+      </div>
+
       <CharacterList />
     </AppContainer>
   );
