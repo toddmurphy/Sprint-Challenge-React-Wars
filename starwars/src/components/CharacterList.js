@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import Character from './Character';
+import Character from './Character';
 
 const CharacterList = () => {
   //Check response for Iniital data structure --> initial response is an 'object' --> set useState as an 'object'
@@ -11,8 +11,8 @@ const CharacterList = () => {
     axios
       .get('https://swapi.co/api/people/')
       .then(response => {
-        console.log(response.data);
-        setCharacterData(response.data);
+        console.log(response.data.results);
+        setCharacterData(response.data.results);
       })
       .catch(error => {
         console.log('No star wars data returned', error);
@@ -21,7 +21,9 @@ const CharacterList = () => {
 
   return (
     // map over characterData to export props to Character
-    <p>test CharacterList</p>
+    characterData.map((character, index) => {
+      return <Character key={index} character={character} />;
+    })
   );
 };
 
