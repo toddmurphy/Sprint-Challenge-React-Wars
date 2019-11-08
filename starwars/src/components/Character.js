@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const CharacterWrapper = styled.div`
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+`;
+
 const CharacterContainer = styled.div`
   /* border: 2px solid black; */
   display: flex;
@@ -11,6 +17,7 @@ const CharacterContainer = styled.div`
   border-radius: 5px;
   box-shadow: 0 10px 10px -2px;
   background: lightgray;
+  width: 80%;
 `;
 
 const CharacterText = styled.p`
@@ -29,14 +36,16 @@ const LikeButton = styled.button`
 const Character = props => {
   return (
     //add character props data here
-    <CharacterContainer>
-      <CharacterText>{props.characters.name}</CharacterText>
-      <CharacterText>{props.characters.birth_year}</CharacterText>
-      <CharacterText>{props.characters.gender}</CharacterText>
-      <CharacterText>{props.characters.height}</CharacterText>
-      <CharacterText>{props.characters.mass}</CharacterText>
-      <LikeButton>Like</LikeButton>
-    </CharacterContainer>
+    <CharacterWrapper>
+      <CharacterContainer>
+        <CharacterText>{props.characters.name}</CharacterText>
+        <CharacterText>{props.characters.birth_year}</CharacterText>
+        <CharacterText>{props.characters.gender}</CharacterText>
+        <CharacterText>{props.characters.height}</CharacterText>
+        <CharacterText>{props.characters.mass}</CharacterText>
+        <LikeButton>Like</LikeButton>
+      </CharacterContainer>
+    </CharacterWrapper>
   );
 };
 

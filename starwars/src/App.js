@@ -48,7 +48,7 @@ const App = () => {
         <HeaderTitle>May the Lambda Force be with you...Always!</HeaderTitle>
         <MovieImage src="https://images.unsplash.com/photo-1547700055-b61cacebece9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
       </HeaderContainer>
-      <CharacterList /> //Component
+      <CharacterList />
     </AppContainer>
   );
 };
