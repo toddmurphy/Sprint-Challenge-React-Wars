@@ -1,9 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import Character from './Character';
 import axios from 'axios';
+// import Character from './Character';
 
 const CharacterList = () => {
-  return <p>test CharacterList</p>;
+  //Check response for Iniital data structure --> initial response is an 'object' --> set useState as an 'object'
+  const [characterData, setCharacterData] = useState({});
+
+  //Use 'useEffect' to get data from star wars API using 'axios' get call
+  useEffect(() => {
+    axios
+      .get('https://swapi.co/api/people/')
+      .then(response => {
+        console.log(response.data);
+        setCharacterData(response.data);
+      })
+      .catch(error => {
+        console.log('No star wars data returned', error);
+      });
+  }, []); //add empty dependency array to avoid infinite loop
+
+  return (
+    // map over characterData to export props to Character
+    <p>test CharacterList</p>
+  );
 };
 
 export default CharacterList;
