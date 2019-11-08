@@ -2,11 +2,14 @@ import React from 'react';
 import './App.css';
 import styled from 'styled-components';
 import CharacterList from './components/CharacterList';
+import Logo from '../src/images/logo.png';
 
-const AppTitle = styled.div`
-  font-size: 3rem;
-  text-align: center;
+const TitleContainer = styled.div`
   padding: 5% 0;
+  border: 1px sold red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 const HeaderContainer = styled.div`
@@ -39,7 +42,9 @@ const App = () => {
 
   return (
     <div>
-      <AppTitle>React Wars: Ready for Battle </AppTitle>
+      <TitleContainer>
+        <img src={Logo} alt="star wars logo" />
+      </TitleContainer>
 
       <HeaderContainer>
         <HeaderTitle>May the Lambda Force be with you...Always!</HeaderTitle>
