@@ -2,13 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CharacterWrapper = styled.div`
-  border: 2px solid red;
   display: flex;
   justify-content: center;
 `;
 
 const CharacterContainer = styled.div`
-  /* border: 2px solid black; */
   display: flex;
   justify-content: space-around;
   align-items: center;
