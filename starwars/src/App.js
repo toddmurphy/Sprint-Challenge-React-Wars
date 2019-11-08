@@ -1,6 +1,11 @@
 import React from 'react';
 import './App.css';
+import styled from 'styled-components';
 import CharacterList from './components/CharacterList';
+
+const AppContainer = styled.div`
+  border: 2px solid red;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -11,10 +16,9 @@ const App = () => {
   // sync up with, if any.
 
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
+    <AppContainer>
       <CharacterList />
-    </div>
+    </AppContainer>
   );
 };
 
