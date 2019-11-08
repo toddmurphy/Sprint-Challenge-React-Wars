@@ -4,7 +4,7 @@ import Character from './Character';
 
 const CharacterList = () => {
   //Check response for Iniital data structure --> initial response is an 'object' --> set useState as an 'object'
-  const [characterData, setCharacterData] = useState({});
+  const [characterData, setCharacterData] = useState([]);
 
   //Use 'useEffect' to get data from star wars API using 'axios' get call
   useEffect(() => {
@@ -20,10 +20,11 @@ const CharacterList = () => {
   }, []); //add empty dependency array to avoid infinite loop
 
   return (
-    // map over characterData to export props to Character
-    characterData.map((character, index) => {
-      return <Character key={index} character={character} />;
-    })
+    <div>
+      {characterData.map((characters, index) => {
+        return <Character key={index} characters={characters} />;
+      })}
+    </div>
   );
 };
 

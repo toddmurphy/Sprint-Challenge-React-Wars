@@ -5,12 +5,12 @@ const Character = props => {
     //add character props data here
     <div>
       <p>test character props</p>
-      <p>{props.character.name}</p>
-      <p>{props.character.birth_year}</p>
-      <p>{props.character.gender}</p>
-      <p>{props.character.height}</p>
-      <p>{props.character.mass}</p>
-      <p>{props.character.homeworld}</p>
+      <p>{props.characters.name}</p>
+      <p>{props.characters.birth_year}</p>
+      <p>{props.characters.gender}</p>
+      <p>{props.characters.height}</p>
+      <p>{props.characters.mass}</p>
+      <p>{props.characters.homeworld}</p>
     </div>
   );
 };
