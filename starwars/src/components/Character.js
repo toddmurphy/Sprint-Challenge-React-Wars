@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MovieIn from './MovieIn';
 import styled from 'styled-components';
 
 const CharacterWrapper = styled.div`
   display: flex;
   justify-content: center;
+  height: 500px;
 `;
 
 const CharacterContainer = styled.div`
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
   align-items: center;
   padding: 2% 0;
@@ -22,6 +24,15 @@ const CharacterText = styled.p`
   font-size: 1.4rem;
 `;
 
+const MovieListContainer = styled.div`
+  border: 2px solid red;
+  height: 50px;
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; */
+`;
+
 const LikeButton = styled.button`
   font-size: 1.4rem;
   border-radius: 5px;
@@ -32,6 +43,8 @@ const LikeButton = styled.button`
 `;
 
 const Character = props => {
+  const [likes, setLikes] = useState(0);
+
   return (
     //add character props data here
     <CharacterWrapper>
@@ -41,7 +54,10 @@ const Character = props => {
         <CharacterText>{props.characters.gender}</CharacterText>
         <CharacterText>{props.characters.height}</CharacterText>
         <CharacterText>{props.characters.mass}</CharacterText>
-        <LikeButton>Like</LikeButton>
+        <LikeButton onClick={() => setLikes(likes + 1)}>Like {likes}</LikeButton>
+        <MovieListContainer>
+          <MovieIn movie={props.characters.films} />
+        </MovieListContainer>
       </CharacterContainer>
     </CharacterWrapper>
   );
